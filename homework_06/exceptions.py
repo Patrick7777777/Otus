@@ -16,12 +16,13 @@ class LowFuelError(Exception):
 class NotEnoughFuel(Exception):
     def __init__(self, fuel: int):
         self.fuel = fuel
-        self.message = f'Для поездки недостаточно {fuel} литров бензина'
+        self.message = f'Для поездки недостаточно {self.fuel} литров бензина'
         super().__init__(self.message)
 
 
 class CargoOverload(Exception):
     def __init__(self, overload: float):
-        self.message = f'Перегрузка на {overload} кг'
+        self.overload = overload
+        self.message = f'Перегрузка на {self.overload} кг'
         super().__init__(self.message)
 
